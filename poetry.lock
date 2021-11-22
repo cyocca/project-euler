@@ -126,6 +126,14 @@ typing-inspect = ">=0.4.0"
 dev = ["black (==21.10b0)", "coverage (>=4.5.4)", "fixit (==0.1.1)", "flake8 (>=3.7.8)", "hypothesis (>=4.36.0)", "hypothesmith (>=0.0.4)", "jupyter (>=1.0.0)", "nbsphinx (>=0.4.2)", "prompt-toolkit (>=2.0.9)", "pyre-check (==0.9.3)", "setuptools-scm (>=6.0.1)", "sphinx-rtd-theme (>=0.4.3)", "tox (>=3.18.1)", "ufmt (==1.2)", "usort (==0.6.3)"]
 
 [[package]]
+name = "more-itertools"
+version = "8.11.0"
+description = "More routines for operating on iterables, beyond itertools"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
@@ -291,7 +299,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "0117c8fb875ca8ceadcb8d0a7ec5e76a6ec86d5805db02d4c613b28ad25e05b2"
+content-hash = "371cb8024995fb739fd75ba75701daa1ff9ec98046c698a5ddfd73c0c08cde42"
 
 [metadata.files]
 "backports.entry-points-selectable" = [
@@ -333,6 +341,10 @@ isort = [
 libcst = [
     {file = "libcst-0.3.22-py3-none-any.whl", hash = "sha256:a277b1f240d41d564bda4f1d6a36682435e7bb17bf903567279ef255b0c89bc7"},
     {file = "libcst-0.3.22.tar.gz", hash = "sha256:0dcfc4c050ec4474f3406e4f92862678eeca97a9a2ad62261ade01c1438bd7ce"},
+]
+more-itertools = [
+    {file = "more-itertools-8.11.0.tar.gz", hash = "sha256:0a2fd25d343c08d7e7212071820e7e7ea2f41d8fb45d6bc8a00cd6ce3b7aab88"},
+    {file = "more_itertools-8.11.0-py3-none-any.whl", hash = "sha256:88afff98d83d08fe5e4049b81e2b54c06ebb6b3871a600040865c7a592061cbb"},
 ]
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},

@@ -6,6 +6,7 @@ authors = ["Chandler Yocca <cyocca@comcast.net>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+more-itertools = "^8.11.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.11b1"
