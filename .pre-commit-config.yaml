@@ -6,13 +6,17 @@ repos:
       - id: end-of-file-fixer
   - repo: local
     hooks:
+      - &python_hook
+        id: pycln
+        name: Remove Unused Imports
+        entry: pycln
+        types: [python]
+        language: python
       - id: isort
         name: Sort Imports
         entry: isort
-        types: [python]
-        language: python
+        <<: *python_hook
       - id: black
         name: Format Code
         entry: black
-        types: [python]
-        language: python
+        <<: *python_hook
