@@ -3,7 +3,7 @@
 from collections import defaultdict
 from typing import Dict, Set
 
-from utils import all_combinations, prime_gen
+from projecteuler.utils import all_combinations, prime_gen
 
 
 def get_digit_indices(n: int) -> Dict[int, Set[int]]:
