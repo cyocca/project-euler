@@ -1,7 +1,11 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
 from itertools import combinations
+from math import gcd
 from typing import Iterable, Iterator, TypeVar
 
-from more_itertools.recipes import flatten
+from more_itertools import flatten
 
 _T = TypeVar("_T")
 
@@ -57,3 +61,42 @@ def all_combinations(values: Iterable[_T]) -> Iterable[_T]:
         ]
     """
     return flatten(combinations(values, i) for i in range(1, len(values) + 1))
+
+
+@dataclass(frozen=True)
+class Fraction:
+
+    numerator: int
+    denominator: int
+
+    @property
+    def reduced(self) -> Fraction:
+        return self.reduce_by(gcd(self.numerator, self.denominator))
+
+    @property
+    def flipped(self) -> Fraction:
+        return Fraction(self.denominator, self.numerator)
+
+    def with_numerator(self, new_numerator: int) -> Fraction:
+        return Fraction(new_numerator, self.denominator)
+
+    def with_denominator(self, new_denominator: int) -> Fraction:
+        return Fraction(self.numerator, new_denominator)
+
+    def reduce_by(self, factor: int) -> Fraction:
+        if self.numerator % factor != 0:
+            raise ValueError(
+                f"The fraction cannot be reduced by {factor} because the numerator "
+                f"({self.numerator}) is not divisible by it"
+            )
+
+        if self.denominator % factor != 0:
+            raise ValueError(
+                f"The fraction cannot be reduced by {factor} because the denominator "
+                f"({self.denominator}) is not divisible by it"
+            )
+
+        return Fraction(
+            self.numerator // factor,
+            self.denominator // factor,
+        )
